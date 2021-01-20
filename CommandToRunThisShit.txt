@@ -1,0 +1,11 @@
+python test.py --checkpoints-path ./checkpoints --test-input ./checkpoints/test --test-output ./checkpoints/output
+
+clear checkpoints folder when changing layers: https://stackoverflow.com/questions/40601975/tensorflow-assign-requires-shapes-of-both-tensors-to-match-lhs-shape-20-rhs
+
+pre-trained: https://github.com/tensorflow/models/tree/master/research/slim#pre-trained-models
+
+python train.py --seed 100 --dataset cifar10 --dataset-path ./dataset/cifar10 --checkpoints-path ./checkpoints --gpu-ids '0' --save-interval 50 --batch-size 128 --epochs 200 --lr 3e-4 --lr-decay-steps 1e4 --augment True
+
+
+https://machinelearningmastery.com/how-to-use-transfer-learning-when-developing-convolutional-neural-network-models/
+-> How to implement pre-trained model
