@@ -4,18 +4,7 @@ tf.disable_v2_behavior()
 from .ops import conv2d, conv2d_transpose, pixelwise_accuracy
 
 # example of using the vgg16 model as a feature extraction model
-from keras.preprocessing.image import load_img
-from keras.preprocessing.image import img_to_array
-#from keras.applications.vgg16 import preprocess_input
-#from keras.applications.vgg16 import decode_predictions
-#from keras.applications.vgg16 import VGG16
-from keras.models import Model
-from pickle import dump
-from keras.applications.inception_resnet_v2 import InceptionResNetV2, preprocess_input
-import time
-from keras import Sequential
-from tensorflow.keras import layers
-from keras import backend as K
+
 import keras
 #import tensorflow as tf
 
