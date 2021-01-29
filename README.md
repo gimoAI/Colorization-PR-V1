@@ -1,3 +1,31 @@
+
+##PATTERN RECOGNITION: Image Colorization
+
+## Training the model
+The model first needs to be trained, as the checkpoint files for the different models are too big to be uploaded to GitHub.
+
+In order to train:
+- Open CMD
+- type "cd ....\Colorization-COLAB-ready", this refers to the directory where the code is
+- type "python train.py --seed 100 --dataset cifar10 --dataset-path ./dataset/cifar10 --checkpoints-path ./checkpoints --gpu-ids '0' --save-interval 50 --batch-size 128 --epochs 200 --lr 3e-4 --lr-decay-steps 1e4 --augment True"
+
+Now it starts training the baseline model. If this process finishes, testing goes as follows:
+- put desired test images in the "\checkpoints\test" folder
+- Open CMD
+- type "cd ....\Colorization-COLAB-ready", this refers to the directory where the code is
+- type "python test.py --checkpoints-path ./checkpoints --test-input ./checkpoints/test --test-output ./checkpoints/output --cifar10"
+
+To switch using to a different model:
+- Copy the "src" folder from the desired model in the "Alternative models" and merge it into "Colorization-COLAB-ready"
+- If you want to start training one of the other models, make sure to delete the "\checkpoints\cifar10" folder
+
+NOTE:
+- We had to make many changes across the files to make the original code on github run (it is also based on TensorFlow 1)
+
+Down below you will find the original info included in the README:
+
+------------------------------
+
 # Image Colorization with Generative Adversarial Networks 
 In this work, we generalize the colorization procedure using a conditional Deep Convolutional Generative Adversarial Network (DCGAN) as as suggested by [Pix2Pix](https://arxiv.org/abs/1611.07004). The network is trained on the datasets [CIFAR-10](https://www.cs.toronto.edu/~kriz/cifar.html) and [Places365](http://places2.csail.mit.edu). Some of the results from Places365 dataset are [shown here.](#places365-results)
 

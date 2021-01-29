@@ -51,8 +51,8 @@ class Discriminator(object):
                     keep_prob = 1.0 - kernel[2] if self.training else 1.0
                     output = tf.compat.v1.nn.dropout(output, keep_prob=keep_prob, name='dropout_' + name, seed=seed)
             
-            #output = keras.layers.Dense(250, activation='relu')(output)
-            #output = keras.layers.Dense(250, activation='relu')(output)
+            output = keras.layers.Dense(250, activation='relu')(output)
+            output = keras.layers.Dense(250, activation='relu')(output)
 
             output = conv2d(
                 inputs=output,
@@ -107,8 +107,8 @@ class Generator(object):
                     keep_prob = 1.0 - kernel[2] if self.training else 1.0
                     output = tf.compat.v1.nn.dropout(output, keep_prob=keep_prob, name='dropout_' + name, seed=seed)
 
-            #output = keras.layers.Dense(250, activation='relu')(output)
-            #output = keras.layers.Dense(250, activation='relu')(output)
+            output = keras.layers.Dense(250, activation='relu')(output)
+            output = keras.layers.Dense(250, activation='relu')(output)
 
             """
             image = inputs

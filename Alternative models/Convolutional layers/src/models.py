@@ -288,25 +288,25 @@ class Cifar10Model(BaseModel):
     def create_generator(self):
         kernels_gen_encoder = [
             (64, 1, 0),     # [batch, 32, 32, ch] => [batch, 32, 32, 64] 4
-            #(64, 1, 0),     #4.2 zelf toegevoegd
+            (64, 1, 0),     #4.2 zelf toegevoegd
             (128, 2, 0),    # [batch, 32, 32, 64] => [batch, 16, 16, 128] 3
-            #(128, 1, 0),    #3.2 zelf toegevoegd
+            (128, 1, 0),    #3.2 zelf toegevoegd
             (256, 2, 0),    # [batch, 16, 16, 128] => [batch, 8, 8, 256] 2
-            #(256, 1, 0),    #2.2 zelf toegevoegd
+            (256, 1, 0),    #2.2 zelf toegevoegd
             (512, 2, 0),    # [batch, 8, 8, 256] => [batch, 4, 4, 512] 1
-            #(512, 1, 0),    #1.1 zelf toegevoegd
+            (512, 1, 0),    #1.1 zelf toegevoegd
             (512, 2, 0),    # [batch, 4, 4, 512] => [batch, 2, 2, 512]
         ]
 
         kernels_gen_decoder = [
             (512, 2, 0.5),  # [batch, 2, 2, 512] => [batch, 4, 4, 512] 1
-            #(512, 1, 0),    #1.1 zelf toegevoegd
+            (512, 1, 0),    #1.1 zelf toegevoegd
             (256, 2, 0.5),  # [batch, 4, 4, 512] => [batch, 8, 8, 256] 2
-            #(256, 1, 0),    #2.2 zelf toegevoegd
+            (256, 1, 0),    #2.2 zelf toegevoegd
             (128, 2, 0),    # [batch, 8, 8, 256] => [batch, 16, 16, 128] 3
-            #(128, 1, 0),    #3.2 zelf toegevoegd
+            (128, 1, 0),    #3.2 zelf toegevoegd
             (64, 2, 0),     # [batch, 16, 16, 128] => [batch, 32, 32, 64] 4
-            #(64, 1, 0),     #4.2 zelf toegevoegd
+            (64, 1, 0),     #4.2 zelf toegevoegd
         ]
 
         return Generator('gen', kernels_gen_encoder, kernels_gen_decoder, training=self.options.training)
@@ -314,11 +314,11 @@ class Cifar10Model(BaseModel):
     def create_discriminator(self):
         kernels_dis = [
             (64, 2, 0),     # [batch, 32, 32, ch] => [batch, 16, 16, 64]
-            #(64, 1, 0),     # Zelf toegevoegd
+            (64, 1, 0),     # Zelf toegevoegd
             (128, 2, 0),    # [batch, 16, 16, 64] => [batch, 8, 8, 128]
-            #(128, 1, 0),    # Zelf toegevoegd
+            (128, 1, 0),    # Zelf toegevoegd
             (256, 2, 0),    # [batch, 8, 8, 128] => [batch, 4, 4, 256]
-            #(256, 1, 0),    # Zelf toegevoegd
+            (256, 1, 0),    # Zelf toegevoegd
             (512, 1, 0),    # [batch, 4, 4, 256] => [batch, 4, 4, 512]
         ]
 
