@@ -5,10 +5,10 @@
 The model first needs to be trained, as the checkpoint files for the different models are too big to be uploaded to GitHub.
 
 ### Dataset
-- We use [CIFAR-10](https://www.cs.toronto.edu/~kriz/cifar.html). To train a model on the full dataset, download datasets from official websites.
-After downloading, put then under the `datasets` folder in the main directory.
+- We use [CIFAR-10](https://www.cs.toronto.edu/~kriz/cifar.html). To train a model on the full dataset, download the dataset from the official website.
+After downloading, put it under the `datasets` folder in the main directory.
 
-### Training:
+### Training locally:
 - Open CMD
 - type "cd ....\Colorization-COLAB-ready", this refers to the directory where the code is
 - type "python train.py --seed 100 --dataset cifar10 --dataset-path ./dataset/cifar10 --checkpoints-path ./checkpoints --gpu-ids '0' --save-interval 50 --batch-size 128 --epochs 200 --lr 3e-4 --lr-decay-steps 1e4 --augment True"
