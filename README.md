@@ -1,5 +1,5 @@
 
-## PATTERN RECOGNITION: Image Colorization
+## Pattern Recognition: Image Colorization
 
 ### Training the model
 The model first needs to be trained, as the checkpoint files for the different models are too big to be uploaded to GitHub.
